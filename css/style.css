@@ -1,0 +1,664 @@
+/* link google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+
+/*============================= start All Element =============================*/
+/* #region All Element  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+:root {
+  --color-btn: #e9bd8c;
+  --color-white: #f5f5f5;
+  --color-black: #111111;
+  --color-black-op: #5d5d5d;
+  --bg-btn: #933c24;
+  --font-sans: "Sansita Swashed", "Herr Von Muellerhoff";
+  --font-Poppins: "Poppins", "Instrument Sans";
+  --font-Inter: "Inter", "Instrument Sans";
+  --padding-inline: 1.5rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+body {
+  height: 10000px;
+}
+/*=================== reveal animation ===================*/
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  -moz-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -o-transform: translateY(60px);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+/* #endregion All Element  */
+/*============================= end All Element =============================*/
+
+/*============================= start header =============================*/
+/* #region All header  */
+
+/* header */
+header {
+  height: 100vh;
+  background-image: url(../img/img_header.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* #region All nav */
+
+/*  container nav */
+.container_nav {
+  /* position: fixed;  //test
+  top: 0;
+  left: 0;
+  right: 0; */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.381),
+    rgba(0, 0, 0, 0.057)
+  );
+  box-shadow: 4px 4px 35px var(--color-black-op);
+}
+
+/* #region logo navbar */
+.logo_navbar {
+  width: 70px;
+  height: 70px;
+}
+/* #endregion logo navbar */
+
+/* #region controls */
+.controls {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-btn);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.controls * {
+  position: absolute;
+  inset: 0;
+  width: max-content;
+  height: max-content;
+  margin: auto;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  opacity: 0;
+}
+
+.active_navbar {
+  opacity: 1;
+  color: var(--color-btn);
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
+/* #endregion controls */
+
+/* #region navbar */
+.navbar {
+  z-index: 999;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 70px);
+  background: rgba(255, 255, 255, 0.162);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0px 0px 0px var(--color-black-op);
+  padding: 0.5rem 1.5rem 0 1.5rem;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  opacity: 0;
+}
+
+.menu_nav {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menu_nav li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.516);
+  padding-bottom: 10px;
+  width: 100%;
+  display: block;
+  color: var(--color-white);
+  font-family: var(--font-Poppins);
+}
+
+.active_menu {
+  opacity: 1;
+}
+/* #endregion navbar */
+
+/* #endregion All nav */
+
+/* #region All hero section  */
+.hero_section {
+  /*margin-top: 70px;
+   //test*/
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.5rem;
+}
+
+.hero_section .hero_section_texts .hero_subbtitle {
+  color: var(--color-btn);
+  font-size: 20px;
+  font-family: var(--font-Inter);
+}
+.hero_section .hero_section_texts .hero_tiltle {
+  color: var(--color-white);
+  font-size: 33px;
+  font-family: var(--font-sans);
+}
+.hero_section .hero_group {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.hero_section .btn_primary {
+  color: var(--color-white);
+  background: var(--bg-btn);
+  padding: 10px;
+  font-family: var(--font-Inter);
+  font-weight: 400;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.hero_section .btn_secondary {
+  color: var(--color-btn);
+  font-family: var(--font-Inter);
+  font-weight: 500;
+}
+
+/* #endregion hero section */
+
+/* #endregion All header  */
+/*============================= end header =============================*/
+
+/*============================= start Top Products =============================*/
+/* #region All top products  */
+.top-products {
+  padding-inline: 1.5rem;
+}
+.top-products__heading {
+  padding-block: 50px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+.top-products__list {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.top-products__item {
+  background-image: url("../img/Rectangle 75.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8px 16px 16px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.top-products__image {
+  width: 130px;
+  height: 130px;
+  display: block;
+  margin: 0 auto;
+}
+
+.top-products__price-wrapper,
+.top-products__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--font-Inter);
+  color: var(--color-white);
+}
+.top-products__price-wrapper {
+  padding-block: 10px 15px;
+}
+.top-products__price {
+  font-size: 17px;
+}
+.top-products__price-icon {
+  border: 1px solid var(--color-white);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-products__name {
+  font-size: 17px;
+}
+.top-products__add-btn {
+  background-color: var(--bg-btn);
+  color: var(--color-white);
+  font-size: 14px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+/* #endregion All top products  */
+/*============================= end Top Products =============================*/
+
+/*============================= start Top promo banner =============================*/
+/* #region All Top promo banner */
+.promo-banner {
+  height: 170px;
+  margin-block: 100px;
+  background-image: url("../img/Rectangle 45.png");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover; /* 👈 دي المهمة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.promo-banner__heading {
+  font-family: var(--font-sans);
+  color: var(--bg-btn);
+}
+.promo-banner__description {
+  font-family: var(--font-Inter);
+  color: var(--color-black-op);
+  padding-block: 10px;
+  font-size: 10px;
+}
+.promo-banner__btn {
+  font-family: var(--font-Inter);
+  color: var(--color-white);
+  background: var(--bg-btn);
+  padding: 10px 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.promo-banner__btn:hover {
+  opacity: 0.9;
+}
+/* #endregion All Top promo banner */
+/*============================= end Top promo banner =============================*/
+
+/*============================= start Explore More =============================*/
+/* #region All Explore More */
+.explore_More {
+  padding-inline: 1.5rem;
+}
+.explore-More__heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+.category-tabs {
+  padding-block: 50px;
+}
+.category_menu {
+  display: flex;
+  overflow: auto;
+  font-family: var(--font-Poppins);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.523);
+  margin: 0 auto;
+  width: 100%;
+}
+.category-tabs_item {
+  position: relative;
+  min-width: 100px;
+  text-align: center;
+  color: var(--color-black);
+}
+.category-tabs_item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  border-bottom: 3px solid var(--bg-btn);
+  left: 50%;
+  bottom: -10px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+.category-tabs_item:hover::after {
+  width: 100%;
+}
+.category-tabs_item a {
+  color: var(--color-black-op);
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.category-tabs_item a:hover {
+  color: var(--bg-btn);
+}
+/* #endregion All Explore More */
+/*============================= end Explore More =============================*/
+
+/*============================= media =============================*/
+/* #region media phones */
+@media (min-width: 576px) {
+  /* #region All top-products  */
+  .top-products__heading {
+    font-size: 42px;
+  }
+  /* #endregion All top-products  */
+
+  /* #region All Explore More */
+  .explore-More__heading {
+    font-size: 42px;
+  }
+  /* #endregion All Explore More */
+}
+/* #endregion media phones */
+
+/* #region media tablets */
+@media (min-width: 768px) {
+  /* #region header */
+
+  /* #region nav */
+
+  /*container nav */
+  .container_nav {
+    padding-inline: 1rem 0; /*left 1rem || right 0rem */
+    gap: 70px;
+  }
+
+  /*controls*/
+  .controls {
+    display: none;
+  }
+
+  /* #region navbar */
+  .navbar {
+    position: inherit;
+    top: 0px;
+    height: 70px;
+    background: transparent;
+    opacity: 1;
+    backdrop-filter: unset;
+    left: 0;
+    width: 100vw;
+    box-shadow: 0px 0px 0px var(--color-black-op);
+    padding: 0rem;
+    display: flex;
+  }
+  .menu_nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .menu_nav li a {
+    border-bottom: none;
+    padding: 0;
+    width: 100%;
+  }
+  /* #endregion navbar */
+
+  /* #endregion nav */
+
+  /* #region hero */
+
+  /* #endregion hero */
+
+  /* #endregion header */
+
+  /* #region All top-products  */
+  .top-products {
+    padding-inline: 1.5rem;
+  }
+  /* #endregion All top-products  */
+
+  /* #region All Top promo banner */
+  .promo-banner {
+    height: 270px;
+  }
+  .promo-banner__heading {
+    font-size: 30px;
+  }
+  .promo-banner__description {
+    padding-block: 15px;
+    font-size: 16px;
+  }
+  .promo-banner__btn {
+    padding: 10px 25px;
+  }
+
+  /* #endregion All Top promo banner */
+
+  /* #region All Explore More */
+  .explore_More {
+    padding-inline: 1.5rem;
+  }
+  .category_menu {
+    justify-content: center;
+  }
+  /* #endregion All Explore More */
+}
+/* #endregion media tablets */
+
+/* #region media desktops */
+@media (min-width: 992px) {
+  /* #region header */
+
+  /* #region All nav */
+  .container_nav {
+    padding-inline: 3rem;
+  }
+  /* #endregion All nav */
+
+  /* #region All hero section  */
+  .hero_section {
+    padding-left: 3.5rem;
+  }
+  .hero_section .hero_section_texts .hero_subbtitle {
+    font-size: 25px;
+  }
+  .hero_section .hero_section_texts .hero_tiltle {
+    font-size: 52px;
+  }
+  .hero_section .hero_group {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .hero_section .btn_primary {
+    padding: 11px 35px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.6s ease;
+    -webkit-transition: 0.6s ease;
+    -moz-transition: 0.6s ease;
+    -ms-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+  }
+  .hero_section .btn_primary:hover {
+    letter-spacing: 1px;
+    opacity: 0.2;
+  }
+
+  /* #endregion All hero section  */
+
+  /* #endregion header */
+
+  /* #region All top-products  */
+  .top-products {
+    padding-inline: 3.5rem;
+  }
+  /* #endregion All top-products */
+
+  /* #region All Explore More */
+  .explore_More {
+    padding-inline: 3.5rem;
+  }
+  /* #endregion All Explore More */
+}
+@media (min-width: 1200px) {
+  /* #region All top-products  */
+  .top-products__heading {
+    padding-block: 70px;
+    font-size: 50px;
+  }
+  /* #endregion All top-products  */
+
+  /* #region All Explore More */
+  .explore-More__heading {
+    font-size: 50px;
+  }
+  /* #endregion All Explore More */
+}
+@media (min-width: 1400px) {
+  /* #region header */
+
+  /* #region All nav */
+  .container_nav {
+    padding-inline: 7rem;
+  }
+  /* #endregion All nav */
+
+  /* #region All hero section  */
+  .hero_section {
+    padding-left: 7.5rem;
+  }
+  .hero_section .hero_section_texts .hero_subbtitle {
+    font-size: 27px;
+  }
+  .hero_section .hero_section_texts .hero_tiltle {
+    font-size: 58px;
+  }
+  .hero_section .hero_group {
+    gap: 20px;
+  }
+  .hero_section .btn_primary {
+    padding: 11px 35px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  /* #endregion All hero section  */
+
+  /* #endregion header */
+
+  /* #region All top-products  */
+  .top-products {
+    padding-inline: 7.5rem;
+  }
+
+  /* #endregion All top-products */
+
+  /* #region All Top promo banner */
+  .promo-banner {
+    height: 320px;
+  }
+  .promo-banner__heading {
+    font-size: 36px;
+  }
+  .promo-banner__description {
+    padding-block: 24px;
+    font-size: 18px;
+  }
+  .promo-banner__btn {
+    padding: 10px 25px;
+  }
+
+  /* #endregion All Top promo banner */
+ 
+  /* #region All Explore More */
+  .explore_More {
+     padding-inline: 7.5rem;
+  }
+  /* #endregion All Explore More */
+}
+/* #endregion media desktops */
+/*============================= media =============================*/
