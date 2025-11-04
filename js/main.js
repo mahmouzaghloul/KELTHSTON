@@ -36,4 +36,17 @@ window.addEventListener("scroll", () => {
 // #endregion ================== Scroll reveal animation ==================
 
 
-// 
+// #region ================== explore More controls items links ==================
+
+// Hide  and  Show cards
+function showProdectGrid(num) {
+  // Hide all the cards
+  document.querySelectorAll(".prodect-grid").forEach(function (grid) {
+    grid.classList.remove("prodect-grid_active");
+  });
+  // Show the required card
+  document.getElementById("content" + num).classList.add("prodect-grid_active");
+}
+
+
+// #endregion ================== explore More controls items links ==================

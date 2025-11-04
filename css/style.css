@@ -16,7 +16,8 @@
   --color-btn: #e9bd8c;
   --color-white: #f5f5f5;
   --color-black: #111111;
-  --color-black-op: #5d5d5d;
+  --color-discr-promo-banner: #5d5d5d;
+  --color-discr-About-us: #b9b9b9;
   --bg-btn: #933c24;
   --font-sans: "Sansita Swashed", "Herr Von Muellerhoff";
   --font-Poppins: "Poppins", "Instrument Sans";
@@ -87,7 +88,7 @@ header {
     rgba(0, 0, 0, 0.381),
     rgba(0, 0, 0, 0.057)
   );
-  box-shadow: 4px 4px 35px var(--color-black-op);
+  box-shadow: 4px 4px 35px var(--color-discr-promo-banner);
 }
 
 /* #region logo navbar */
@@ -146,7 +147,7 @@ header {
   background: rgba(255, 255, 255, 0.162);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  box-shadow: 0px 0px 0px var(--color-black-op);
+  box-shadow: 0px 0px 0px var(--color-discr-promo-banner);
   padding: 0.5rem 1.5rem 0 1.5rem;
   transition: 1s ease;
   -webkit-transition: 1s ease;
@@ -217,6 +218,15 @@ header {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+}
+.hero_section .btn_primary:hover {
+  letter-spacing: 0.5px;
+  opacity: 0.8;
 }
 .hero_section .btn_secondary {
   color: var(--color-btn);
@@ -270,7 +280,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   font-family: var(--font-Inter);
   color: var(--color-white);
 }
@@ -306,6 +315,14 @@ header {
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+  transition: .7s;
+  -webkit-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;
+  -o-transition: .7s;
+}
+.top-products__add-btn:hover {
+opacity: .7;
 }
 /* #endregion All top products  */
 /*============================= end Top Products =============================*/
@@ -331,7 +348,7 @@ header {
 }
 .promo-banner__description {
   font-family: var(--font-Inter);
-  color: var(--color-black-op);
+  color: var(--color-discr-promo-banner);
   padding-block: 10px;
   font-size: 10px;
 }
@@ -409,7 +426,7 @@ header {
   width: 100%;
 }
 .category-tabs_item a {
-  color: var(--color-black-op);
+  color: var(--color-discr-promo-banner);
   font-size: 17px;
   font-weight: bold;
   transition: 0.3s;
@@ -421,8 +438,173 @@ header {
 .category-tabs_item a:hover {
   color: var(--bg-btn);
 }
+/* ====================================== */
+.prodect-grid_item {
+  position: relative;
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+}
+.prodect-grid_item:hover {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+.prodect-grid_item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  z-index: 999;
+  top: 50%;
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.655),
+    rgba(0, 0, 0, 0.039)
+  );
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+.prodect-grid_item:hover:after {
+  height: 100%;
+}
+
+.prodect-grid {
+  display: none;
+}
+.prodect-grid_active {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 /* #endregion All Explore More */
 /*============================= end Explore More =============================*/
+
+/*============================= start About us =============================*/
+/* #region All Top promo banner */
+.About-us {
+  height: 170px;
+  margin-block: 100px;
+  background-image: url("../img/Rectangle 41.png");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover; /* 👈 دي المهمة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.About-usr__heading {
+  font-family: var(--font-sans);
+  color: var(--color-white);
+}
+.About-usr__description {
+  font-family: var(--font-Inter);
+  color: var(--color-discr-About-us);
+  padding-block: 10px;
+  font-size: 10px;
+}
+.About-usr__btn {
+  font-family: var(--font-Inter);
+  color: var(--color-white);
+  background: var(--bg-btn);
+  padding: 10px 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.About-usr__btn:hover {
+  opacity: 0.9;
+}
+/* #endregion All Top promo banner */
+/*============================= end About us =============================*/
+
+/*============================= start Featured Treats  =============================*/
+/* #region All Featured Treats */
+.Featured-Treats {
+  padding-inline: 1.5rem;
+}
+.Featured-Treats_heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: var(--font-sans);
+  padding-bottom: 50px;
+}
+.Featured-Treats_cards {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+}
+.Featured-Treats_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 300px;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.Featured-Treats_item:hover {
+  transform:rotateX(20deg) ;
+  -webkit-transform:rotateX(20deg) ;
+  -moz-transform:rotateX(20deg) ;
+  -ms-transform:rotateX(20deg) ;
+  -o-transform:rotateX(20deg) ;
+  border: 5px solid var(--color-discr-promo-banner);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  outline: 4px dotted black;
+  padding: 40px;
+  margin: 20px;
+  background-image: linear-gradient(10deg , rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.637));
+}
+
+.Featured-Treats_name_priec {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Featured-Treats_name,
+.Featured-Treats_priec {
+  font-size: 20px;
+  font-family: var(--font-Inter);
+  margin-top: 10px;
+}
+/* #endregion All Featured Treats */
+/*============================= end Featured Treats  =============================*/
+
+
 
 /*============================= media =============================*/
 /* #region media phones */
@@ -438,6 +620,12 @@ header {
     font-size: 42px;
   }
   /* #endregion All Explore More */
+
+  /* #region All Featured-Treats */
+  .Featured-Treats_heading {
+    font-size: 42px;
+  }
+  /* #endregion All Featured-Treats */
 }
 /* #endregion media phones */
 
@@ -468,7 +656,7 @@ header {
     backdrop-filter: unset;
     left: 0;
     width: 100vw;
-    box-shadow: 0px 0px 0px var(--color-black-op);
+    box-shadow: 0px 0px 0px var(--color-discr-promo-banner);
     padding: 0rem;
     display: flex;
   }
@@ -486,18 +674,7 @@ header {
   /* #endregion navbar */
 
   /* #endregion nav */
-
-  /* #region hero */
-
-  /* #endregion hero */
-
   /* #endregion header */
-
-  /* #region All top-products  */
-  .top-products {
-    padding-inline: 1.5rem;
-  }
-  /* #endregion All top-products  */
 
   /* #region All Top promo banner */
   .promo-banner {
@@ -524,6 +701,22 @@ header {
     justify-content: center;
   }
   /* #endregion All Explore More */
+
+  /* #region All About us */
+  .About-us {
+    height: 270px;
+  }
+  .About-usr__heading {
+    font-size: 30px;
+  }
+  .About-usr__description {
+    padding-block: 15px;
+    font-size: 16px;
+  }
+  .About-usr__btn {
+    padding: 10px 25px;
+  }
+  /* #endregion All About us */
 }
 /* #endregion media tablets */
 
@@ -563,10 +756,6 @@ header {
     -ms-transition: 0.6s ease;
     -o-transition: 0.6s ease;
   }
-  .hero_section .btn_primary:hover {
-    letter-spacing: 1px;
-    opacity: 0.2;
-  }
 
   /* #endregion All hero section  */
 
@@ -583,8 +772,22 @@ header {
     padding-inline: 3.5rem;
   }
   /* #endregion All Explore More */
+
+  /* #region All Featured Treats */
+  .Featured-Treats {
+    padding-inline: 3.5rem;
+  }
+  /* #endregion All Featured Treats */
 }
 @media (min-width: 1200px) {
+  /* #region All header */
+  /* #region logo navbar */
+  .logo_navbar {
+    width: 100px;
+  }
+  /* #endregion logo navbar*/
+  /* #endregion All header*/
+
   /* #region All top-products  */
   .top-products__heading {
     padding-block: 70px;
@@ -597,6 +800,13 @@ header {
     font-size: 50px;
   }
   /* #endregion All Explore More */
+
+  /* #region All Featured Treats */
+  .Featured-Treats_heading {
+    font-size: 50px;
+    padding-bottom: 70px;
+  }
+  /* #endregion All Featured Treats */
 }
 @media (min-width: 1400px) {
   /* #region header */
@@ -653,12 +863,42 @@ header {
   }
 
   /* #endregion All Top promo banner */
- 
+
   /* #region All Explore More */
   .explore_More {
-     padding-inline: 7.5rem;
+    padding-inline: 7.5rem;
   }
   /* #endregion All Explore More */
+
+  /* #region All About us */
+  .About-us {
+    height: 320px;
+  }
+  .About-usr__heading {
+    font-size: 36px;
+  }
+  .About-usr__description {
+    padding-block: 24px;
+    font-size: 18px;
+  }
+  .About-usr__btn {
+    padding: 10px 25px;
+  }
+  /* #endregion All About us */
+
+  /* #region All Featured Treats */
+  .Featured-Treats {
+    padding-inline: 7.5rem;
+  }
+  .Featured-Treats_name,
+  .Featured-Treats_priec {
+    font-size: 30px;
+  }
+  .Featured-Treats_item:hover {
+  padding:74px 27px
+}
+  /* #endregion All Featured Treats */
 }
 /* #endregion media desktops */
 /*============================= media =============================*/
+ 
